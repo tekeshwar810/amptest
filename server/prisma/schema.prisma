@@ -27,6 +27,13 @@ model Rule {
   updatedAt   DateTime        @updatedAt
 }
 
+model Task {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  title     String?
+  updatedAt DateTime @updatedAt
+}
+
 enum EnumRuleStatus {
   Option1
 }
