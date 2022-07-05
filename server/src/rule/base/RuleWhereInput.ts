@@ -13,8 +13,9 @@ import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
-import { IsOptional } from "class-validator";
+import { IsOptional, IsEnum } from "class-validator";
 import { StringFilter } from "../../util/StringFilter";
+import { EnumRuleStatus } from "./EnumRuleStatus";
 @InputType()
 class RuleWhereInput {
   @ApiProperty({
@@ -49,5 +50,16 @@ class RuleWhereInput {
     nullable: true,
   })
   name?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumRuleStatus,
+  })
+  @IsEnum(EnumRuleStatus)
+  @IsOptional()
+  @Field(() => EnumRuleStatus, {
+    nullable: true,
+  })
+  status?: "Option1";
 }
 export { RuleWhereInput };

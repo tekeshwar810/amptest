@@ -11,7 +11,8 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional } from "class-validator";
+import { IsString, IsOptional, IsEnum } from "class-validator";
+import { EnumRuleStatus } from "./EnumRuleStatus";
 @InputType()
 class RuleUpdateInput {
   @ApiProperty({
@@ -35,5 +36,16 @@ class RuleUpdateInput {
     nullable: true,
   })
   name?: string | null;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumRuleStatus,
+  })
+  @IsEnum(EnumRuleStatus)
+  @IsOptional()
+  @Field(() => EnumRuleStatus, {
+    nullable: true,
+  })
+  status?: "Option1" | null;
 }
 export { RuleUpdateInput };

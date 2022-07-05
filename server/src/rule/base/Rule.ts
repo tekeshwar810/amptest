@@ -11,8 +11,9 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsString, IsOptional } from "class-validator";
+import { IsDate, IsString, IsOptional, IsEnum } from "class-validator";
 import { Type } from "class-transformer";
+import { EnumRuleStatus } from "./EnumRuleStatus";
 @ObjectType()
 class Rule {
   @ApiProperty({
@@ -52,6 +53,17 @@ class Rule {
     nullable: true,
   })
   name!: string | null;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumRuleStatus,
+  })
+  @IsEnum(EnumRuleStatus)
+  @IsOptional()
+  @Field(() => EnumRuleStatus, {
+    nullable: true,
+  })
+  status?: "Option1" | null;
 
   @ApiProperty({
     required: true,

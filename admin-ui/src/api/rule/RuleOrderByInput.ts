@@ -5,5 +5,6 @@ export type RuleOrderByInput = {
   discription?: SortOrder;
   id?: SortOrder;
   name?: SortOrder;
+  status?: SortOrder;
   updatedAt?: SortOrder;
 };

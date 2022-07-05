@@ -5,4 +5,5 @@ export type RuleWhereInput = {
   discription?: StringNullableFilter;
   id?: StringFilter;
   name?: StringNullableFilter;
+  status?: "Option1";
 };

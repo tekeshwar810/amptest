@@ -52,6 +52,7 @@ export class RuleControllerBase {
         discription: true,
         id: true,
         name: true,
+        status: true,
         updatedAt: true,
       },
     });
@@ -76,6 +77,7 @@ export class RuleControllerBase {
         discription: true,
         id: true,
         name: true,
+        status: true,
         updatedAt: true,
       },
     });
@@ -101,6 +103,7 @@ export class RuleControllerBase {
         discription: true,
         id: true,
         name: true,
+        status: true,
         updatedAt: true,
       },
     });
@@ -135,6 +138,7 @@ export class RuleControllerBase {
           discription: true,
           id: true,
           name: true,
+          status: true,
           updatedAt: true,
         },
       });
@@ -168,6 +172,7 @@ export class RuleControllerBase {
           discription: true,
           id: true,
           name: true,
+          status: true,
           updatedAt: true,
         },
       });
