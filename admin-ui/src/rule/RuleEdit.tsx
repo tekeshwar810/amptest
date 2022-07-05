@@ -1,5 +1,11 @@
 import * as React from "react";
-import { Edit, SimpleForm, EditProps, TextInput } from "react-admin";
+import {
+  Edit,
+  SimpleForm,
+  EditProps,
+  TextInput,
+  SelectInput,
+} from "react-admin";
 
 export const RuleEdit = (props: EditProps): React.ReactElement => {
   return (
@@ -7,6 +13,14 @@ export const RuleEdit = (props: EditProps): React.ReactElement => {
       <SimpleForm>
         <TextInput label="Discription" source="discription" />
         <TextInput label="Name" source="name" />
+        <SelectInput
+          source="status"
+          label="status"
+          choices={[{ label: "Option 1", value: "Option1" }]}
+          optionText="label"
+          allowEmpty
+          optionValue="value"
+        />
       </SimpleForm>
     </Edit>
   );

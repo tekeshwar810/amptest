@@ -15,6 +15,7 @@ export const RuleShow = (props: ShowProps): React.ReactElement => {
         <TextField label="Discription" source="discription" />
         <TextField label="ID" source="id" />
         <TextField label="Name" source="name" />
+        <TextField label="status" source="status" />
         <DateField source="updatedAt" label="Updated At" />
       </SimpleShowLayout>
     </Show>
