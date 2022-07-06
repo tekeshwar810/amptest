@@ -1,0 +1,213 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input Credentials {
+  password: String!
+  username: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+enum EnumRuleStatus {
+  Option_1
+}
+
+type MetaQueryPayload {
+  count: Float!
+}
+
+type Mutation {
+  createRule(data: RuleCreateInput!): Rule!
+  createTask(data: TaskCreateInput!): Task!
+  createUser(data: UserCreateInput!): User!
+  deleteRule(where: RuleWhereUniqueInput!): Rule!
+  deleteTask(where: TaskWhereUniqueInput!): Task!
+  deleteUser(where: UserWhereUniqueInput!): User!
+  login(credentials: Credentials!): UserInfo!
+  updateRule(data: RuleUpdateInput!, where: RuleWhereUniqueInput!): Rule!
+  updateTask(data: TaskUpdateInput!, where: TaskWhereUniqueInput!): Task!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+}
+
+type Query {
+  _rulesMeta(orderBy: [RuleOrderByInput!], skip: Float, take: Float, where: RuleWhereInput): MetaQueryPayload!
+  _tasksMeta(orderBy: [TaskOrderByInput!], skip: Float, take: Float, where: TaskWhereInput): MetaQueryPayload!
+  _usersMeta(orderBy: [UserOrderByInput!], skip: Float, take: Float, where: UserWhereInput): MetaQueryPayload!
+  rule(where: RuleWhereUniqueInput!): Rule
+  rules(orderBy: [RuleOrderByInput!], skip: Float, take: Float, where: RuleWhereInput): [Rule!]!
+  task(where: TaskWhereUniqueInput!): Task
+  tasks(orderBy: [TaskOrderByInput!], skip: Float, take: Float, where: TaskWhereInput): [Task!]!
+  user(where: UserWhereUniqueInput!): User
+  userInfo: UserInfo!
+  users(orderBy: [UserOrderByInput!], skip: Float, take: Float, where: UserWhereInput): [User!]!
+}
+
+enum QueryMode {
+  Default
+  Insensitive
+}
+
+type Rule {
+  createdAt: DateTime!
+  discription: String
+  id: String!
+  name: String
+  status: EnumRuleStatus
+  updatedAt: DateTime!
+}
+
+input RuleCreateInput {
+  discription: String
+  name: String
+  status: EnumRuleStatus
+}
+
+input RuleOrderByInput {
+  createdAt: SortOrder
+  discription: SortOrder
+  id: SortOrder
+  name: SortOrder
+  status: SortOrder
+  updatedAt: SortOrder
+}
+
+input RuleUpdateInput {
+  discription: String
+  name: String
+  status: EnumRuleStatus
+}
+
+input RuleWhereInput {
+  discription: StringNullableFilter
+  id: StringFilter
+  name: StringNullableFilter
+  status: EnumRuleStatus
+}
+
+input RuleWhereUniqueInput {
+  id: String!
+}
+
+enum SortOrder {
+  Asc
+  Desc
+}
+
+input StringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  mode: QueryMode
+  not: String
+  notIn: [String!]
+  startsWith: String
+}
+
+input StringNullableFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  mode: QueryMode
+  not: String
+  notIn: [String!]
+  startsWith: String
+}
+
+type Task {
+  createdAt: DateTime!
+  id: String!
+  title: String
+  updatedAt: DateTime!
+}
+
+input TaskCreateInput {
+  title: String
+}
+
+input TaskOrderByInput {
+  createdAt: SortOrder
+  id: SortOrder
+  title: SortOrder
+  updatedAt: SortOrder
+}
+
+input TaskUpdateInput {
+  title: String
+}
+
+input TaskWhereInput {
+  id: StringFilter
+  title: StringNullableFilter
+}
+
+input TaskWhereUniqueInput {
+  id: String!
+}
+
+type User {
+  createdAt: DateTime!
+  firstName: String
+  id: String!
+  lastName: String
+  roles: [String!]!
+  updatedAt: DateTime!
+  username: String!
+}
+
+input UserCreateInput {
+  firstName: String
+  lastName: String
+  password: String!
+  roles: [String!]!
+  username: String!
+}
+
+type UserInfo {
+  accessToken: String
+  roles: [String!]!
+  username: String!
+}
+
+input UserOrderByInput {
+  createdAt: SortOrder
+  firstName: SortOrder
+  id: SortOrder
+  lastName: SortOrder
+  password: SortOrder
+  roles: SortOrder
+  updatedAt: SortOrder
+  username: SortOrder
+}
+
+input UserUpdateInput {
+  firstName: String
+  lastName: String
+  password: String
+  roles: [String!]
+  username: String
+}
+
+input UserWhereInput {
+  firstName: StringNullableFilter
+  id: StringFilter
+  lastName: StringNullableFilter
+  username: StringFilter
+}
+
+input UserWhereUniqueInput {
+  id: String!
+}

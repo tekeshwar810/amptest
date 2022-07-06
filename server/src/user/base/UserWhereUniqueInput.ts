@@ -21,5 +21,6 @@ class UserWhereUniqueInput {
   @IsString()
   @Field(() => String)
   id!: string;
+  
 }
 export { UserWhereUniqueInput };

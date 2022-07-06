@@ -11,11 +11,17 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { ArgsType, Field } from "@nestjs/graphql";
 import { UserWhereUniqueInput } from "./UserWhereUniqueInput";
-
+import { UserUpdatePasswordInput } from "./UserUpdatePasswordInput";
 @ArgsType()
 class UserFindUniqueArgs {
   @Field(() => UserWhereUniqueInput, { nullable: false })
   where!: UserWhereUniqueInput;
 }
+@ArgsType()
+class UserDataArgs {
+  @Field(() => UserUpdatePasswordInput, { nullable: false })
+  data!: UserUpdatePasswordInput;
+}
 
-export { UserFindUniqueArgs };
+
+export { UserFindUniqueArgs,UserDataArgs };
