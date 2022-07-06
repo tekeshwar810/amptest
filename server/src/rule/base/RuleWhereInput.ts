@@ -61,5 +61,16 @@ class RuleWhereInput {
     nullable: true,
   })
   status?: "Option1";
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  title?: StringNullableFilter;
 }
 export { RuleWhereInput };

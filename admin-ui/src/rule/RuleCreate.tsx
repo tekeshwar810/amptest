@@ -21,6 +21,7 @@ export const RuleCreate = (props: CreateProps): React.ReactElement => {
           allowEmpty
           optionValue="value"
         />
+        <TextInput label="Title" source="title" />
       </SimpleForm>
     </Create>
   );
