@@ -21,6 +21,7 @@ export const RuleEdit = (props: EditProps): React.ReactElement => {
           allowEmpty
           optionValue="value"
         />
+        <TextInput label="Title" source="title" />
       </SimpleForm>
     </Edit>
   );

@@ -47,5 +47,16 @@ class RuleUpdateInput {
     nullable: true,
   })
   status?: "Option1" | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  title?: string | null;
 }
 export { RuleUpdateInput };

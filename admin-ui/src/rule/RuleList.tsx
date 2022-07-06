@@ -17,6 +17,7 @@ export const RuleList = (props: ListProps): React.ReactElement => {
         <TextField label="ID" source="id" />
         <TextField label="Name" source="name" />
         <TextField label="status" source="status" />
+        <TextField label="Title" source="title" />
         <DateField source="updatedAt" label="Updated At" />
       </Datagrid>
     </List>
